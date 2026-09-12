@@ -30,7 +30,7 @@ JobFit AI의 메인 화면입니다.
 
 모바일 환경에서도 사용할 수 있도록 반응형 UI를 적용했습니다.
 
-![모바일 화면](evidence/mobile.png)
+![모바일 화면](evidence/mobile.jpg)
 
 ---
 
@@ -40,24 +40,6 @@ JobFit AI의 메인 화면입니다.
 AI 채용공고 추천을 요청할 수 있습니다.
 
 ![AI MATCH 입력 화면](evidence/ai-input.png)
-
----
-
-## 4. AI 추천 결과
-
-입력된 사용자 정보를 기반으로 AI가 채용공고를 분석하여
-적합한 채용공고 TOP 3와 추천 이유를 제공합니다.
-
-![AI 추천 결과](evidence/ai-result.png)
-
----
-
-## 5. AI 코딩 도구 활용 과정
-
-ChatGPT 등의 AI 코딩 도구를 활용하여
-웹 페이지 구현, 오류 분석 및 코드 수정 과정을 진행했습니다.
-
-![AI 코딩 도구 사용 과정](evidence/ai-coding.png)
 
 ---
 
