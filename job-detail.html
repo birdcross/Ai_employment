@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>JobFit AI | 공고 상세</title>
+
+  <!-- 공통 CSS -->
+  <link rel="stylesheet" href="css/common.css">
+
+  <!-- 상세페이지 전용 CSS -->
+  <link rel="stylesheet" href="css/job-detail.css">
+</head>
+
+<body>
+
+  <!-- =========================
+       HEADER
+  ========================== -->
+  <header id="siteHeader" class="site-header">
+
+    <div class="container nav-wrap">
+
+      <a
+        id="brandLogo"
+        class="brand"
+        href="index.html">
+        JobFit AI
+      </a>
+
+      <button
+        id="menuToggle"
+        class="menu-toggle"
+        type="button"
+        aria-label="메뉴 열기">
+        ☰
+      </button>
+
+      <nav
+        id="mainNav"
+        class="main-nav">
+
+        <a href="index.html">
+          HOME
+        </a>
+
+        <a
+          class="active"
+          href="jobs.html">
+          JOBS
+        </a>
+
+        <a href="match.html">
+          AI MATCH
+        </a>
+
+        <a href="mypage.html">
+          MY PAGE
+        </a>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+
+  <!-- =========================
+       MAIN
+  ========================== -->
+  <main
+    id="jobDetailPage"
+    class="detail-main">
+
+    <div class="container">
+
+      <!-- 뒤로가기 -->
+      <div
+        id="detailTop"
+        class="detail-top">
+
+        <a
+          id="backToJobs"
+          class="back-link"
+          href="jobs.html">
+          ← 채용공고 목록
+        </a>
+
+      </div>
+
+
+      <!-- =========================
+           채용공고 상세내용
+
+           detail.js에서
+           이 영역 안에 내용을 생성함
+
+           ID 변경하면 안 됨!
+      ========================== -->
+      <section
+        id="jobDetail"
+        class="detail-layout">
+
+        <!--
+          detail.js에서 동적으로
+
+          .detail-card
+          .sidebar-card
+
+          등을 생성
+        -->
+
+      </section>
+
+    </div>
+
+  </main>
+
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+  <footer
+    id="siteFooter"
+    class="site-footer">
+
+    <div class="container">
+
+      <p>
+        JobFit AI · AI 기반 맞춤 채용공고 추천 서비스
+      </p>
+
+    </div>
+
+  </footer>
+
+
+  <!-- =========================
+       JAVASCRIPT
+  ========================== -->
+
+  <!-- 채용공고 데이터 -->
+  <script src="js/jobs-data.js"></script>
+
+  <!-- 공통 기능 -->
+  <script src="js/common.js"></script>
+
+  <!-- 상세페이지 기능 -->
+  <script src="js/detail.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,448 @@
+/* =========================================================
+   기본 설정
+========================================================= */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --primary: #2563eb;
+  --primary-dark: #1d4ed8;
+  --primary-light: #eff6ff;
+
+  --navy: #0f172a;
+
+  --text: #1e293b;
+  --text-light: #64748b;
+
+  --background: #f8fafc;
+  --white: #ffffff;
+
+  --border: #e2e8f0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+
+  font-family:
+    "Pretendard",
+    "Noto Sans KR",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  background: var(--background);
+  color: var(--text);
+
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   공통 Container
+========================================================= */
+
+.container {
+  width: min(1180px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   SITE HEADER
+========================================================= */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+
+  width: 100%;
+
+  background: rgba(255, 255, 255, 0.97);
+
+  border-bottom: 1px solid #e2e8f0;
+
+  box-shadow:
+    0 3px 15px rgba(15, 23, 42, 0.05);
+
+  backdrop-filter: blur(12px);
+}
+
+
+/* 실제 Header 내부 */
+
+.site-header .nav-wrap {
+  position: relative;
+
+  height: 72px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 30px;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.site-header .brand {
+  flex-shrink: 0;
+
+  display: inline-flex;
+  align-items: center;
+
+  color: #0f172a;
+
+  font-size: 23px;
+  font-weight: 900;
+
+  letter-spacing: -1px;
+
+  white-space: nowrap;
+}
+
+
+/* 마우스 Hover */
+
+.site-header .brand:hover {
+  color: #2563eb;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.site-header .main-nav {
+  display: flex;
+  align-items: center;
+
+  gap: 6px;
+
+  margin-left: auto;
+}
+
+
+/* 메뉴 */
+
+.site-header .main-nav a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 40px;
+
+  padding: 0 15px;
+
+  border-radius: 9px;
+
+  color: #475569;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  white-space: nowrap;
+
+  transition:
+    background 0.2s,
+    color 0.2s,
+    transform 0.2s;
+}
+
+
+/* Hover */
+
+.site-header .main-nav a:hover {
+  background: #eff6ff;
+
+  color: #2563eb;
+}
+
+
+/* 현재 페이지 */
+
+.site-header .main-nav a.active {
+  background: #2563eb;
+
+  color: #ffffff;
+
+  box-shadow:
+    0 4px 12px rgba(37, 99, 235, 0.2);
+}
+
+
+/* =========================================================
+   MOBILE MENU BUTTON
+========================================================= */
+
+.site-header .menu-toggle {
+  display: none;
+
+  flex-shrink: 0;
+
+  width: 42px;
+  height: 42px;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border: 1px solid #e2e8f0;
+  border-radius: 9px;
+
+  background: #ffffff;
+
+  color: #0f172a;
+
+  font-size: 21px;
+
+  line-height: 1;
+}
+
+
+/* =========================================================
+   공통 버튼
+========================================================= */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 45px;
+
+  padding: 0 21px;
+
+  border: 0;
+  border-radius: 10px;
+
+  font-size: 14px;
+  font-weight: 800;
+
+  transition: 0.2s;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn-primary {
+  background: #2563eb;
+
+  color: #ffffff;
+
+  box-shadow:
+    0 7px 18px rgba(37, 99, 235, 0.22);
+}
+
+.btn-primary:hover {
+  background: #1d4ed8;
+}
+
+.btn-secondary,
+.btn-light {
+  background: #ffffff;
+
+  border: 1px solid #e2e8f0;
+
+  color: #334155;
+}
+
+
+/* =========================================================
+   PAGE HEADER
+   사이트 메뉴 Header와 다른 부분
+========================================================= */
+
+.page-header {
+  width: 100%;
+
+  padding: 48px 0;
+
+  background:
+    linear-gradient(
+      135deg,
+      #0f172a 0%,
+      #172554 55%,
+      #1e3a8a 100%
+    );
+
+  color: #ffffff;
+}
+
+.page-header .eyebrow {
+  display: inline-block;
+
+  margin-bottom: 6px;
+
+  color: #93c5fd;
+
+  font-size: 11px;
+  font-weight: 900;
+
+  letter-spacing: 1.5px;
+}
+
+.page-header h1 {
+  margin: 0 0 6px;
+
+  color: #ffffff;
+
+  font-size: 34px;
+  font-weight: 850;
+
+  letter-spacing: -1px;
+}
+
+.page-header p {
+  margin: 0;
+
+  color: #cbd5e1;
+
+  font-size: 14px;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.site-footer {
+  width: 100%;
+
+  padding: 28px 0;
+
+  background: #0f172a;
+
+  color: #94a3b8;
+
+  text-align: center;
+
+  font-size: 12px;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+  .container {
+    width: calc(100% - 28px);
+  }
+
+
+  /* Header */
+
+  .site-header .nav-wrap {
+    height: 64px;
+
+    gap: 10px;
+  }
+
+
+  /* Logo */
+
+  .site-header .brand {
+    font-size: 21px;
+  }
+
+
+  /* 햄버거 */
+
+  .site-header .menu-toggle {
+    display: flex;
+
+    margin-left: auto;
+  }
+
+
+  /* 메뉴 */
+
+  .site-header .main-nav {
+    display: none;
+
+    position: absolute;
+
+    top: 58px;
+    left: 0;
+    right: 0;
+
+    z-index: 10000;
+
+    flex-direction: column;
+    align-items: stretch;
+
+    gap: 4px;
+
+    padding: 10px;
+
+    background: #ffffff;
+
+    border: 1px solid #e2e8f0;
+    border-radius: 13px;
+
+    box-shadow:
+      0 15px 35px rgba(15, 23, 42, 0.15);
+  }
+
+
+  /* JS에서 open 붙으면 메뉴 표시 */
+
+  .site-header .main-nav.open {
+    display: flex;
+  }
+
+
+  .site-header .main-nav a {
+    width: 100%;
+
+    justify-content: flex-start;
+
+    min-height: 44px;
+
+    padding: 0 14px;
+  }
+
+
+  /* 페이지 제목 */
+
+  .page-header {
+    padding: 35px 0;
+  }
+
+  .page-header h1 {
+    font-size: 27px;
+  }
+
+}

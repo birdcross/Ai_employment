@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>JobFit AI | 마이페이지</title>
+
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/mypage.css">
+</head>
+
+
+<body>
+
+  <!-- =========================================
+       HEADER
+  ========================================== -->
+  <header id="siteHeader" class="site-header">
+
+    <div class="container nav-wrap">
+
+      <a
+        id="brandLogo"
+        class="brand"
+        href="index.html">
+        JobFit AI
+      </a>
+
+      <button
+        id="menuToggle"
+        class="menu-toggle"
+        type="button"
+        aria-label="메뉴 열기">
+        ☰
+      </button>
+
+      <nav
+        id="mainNav"
+        class="main-nav">
+
+        <a href="index.html">
+          HOME
+        </a>
+
+        <a href="jobs.html">
+          JOBS
+        </a>
+
+        <a href="match.html">
+          AI MATCH
+        </a>
+
+        <a
+          class="active"
+          href="mypage.html">
+          MY PAGE
+        </a>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+
+  <!-- =========================================
+       PAGE HEADER
+  ========================================== -->
+  <section class="page-header">
+
+    <div class="container">
+
+      <span class="eyebrow">
+        MY PAGE
+      </span>
+
+      <h1>
+        관심공고 / 최근 추천
+      </h1>
+
+      <p>
+        관심 있는 채용공고와 AI 추천 기록을 한눈에 확인하세요.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================================
+       MAIN
+  ========================================== -->
+  <main
+    id="mypagePage"
+    class="mypage-main">
+
+    <div class="container">
+
+      <section class="mypage-layout">
+
+
+        <!-- =====================================
+             PROFILE
+        ====================================== -->
+        <aside class="profile-card">
+
+          <div class="profile-avatar">
+            J
+          </div>
+
+          <div class="profile-info">
+
+            <span class="profile-label">
+              MY PROFILE
+            </span>
+
+            <h2>
+              JobFit 사용자
+            </h2>
+
+            <p class="profile-skills">
+              Java · Oracle · Python · MES
+            </p>
+
+          </div>
+
+
+          <div class="profile-tags">
+
+            <span>
+              경력 3년
+            </span>
+
+            <span>
+              부산 / 경남
+            </span>
+
+          </div>
+
+
+          <div class="profile-summary">
+
+            <div>
+              <span>관심공고</span>
+              <strong>2</strong>
+            </div>
+
+            <div>
+              <span>최근추천</span>
+              <strong>3</strong>
+            </div>
+
+          </div>
+
+
+          <a
+            class="btn btn-profile btn-wide"
+            href="match.html">
+
+            ✨ 프로필 기반 추천
+
+          </a>
+
+        </aside>
+
+
+
+        <!-- =====================================
+             MY PAGE CONTENT
+        ====================================== -->
+        <div class="mypage-content">
+
+
+          <!-- ===================================
+               관심공고
+          ==================================== -->
+          <section class="mypage-section">
+
+            <div class="subsection-header">
+
+              <div>
+
+                <span class="section-label">
+                  FAVORITES
+                </span>
+
+                <h2>
+                  관심공고
+                </h2>
+
+              </div>
+
+              <span class="section-count">
+                2개
+              </span>
+
+            </div>
+
+
+            <!--
+              mypage.js에서 관심공고 생성
+              ID 변경하면 안 됨
+            -->
+            <div
+              id="favoriteJobs"
+              class="favorite-list">
+            </div>
+
+          </section>
+
+
+
+          <!-- ===================================
+               최근 추천 기록
+          ==================================== -->
+          <section class="mypage-section history-section">
+
+            <div class="subsection-header">
+
+              <div>
+
+                <span class="section-label">
+                  HISTORY
+                </span>
+
+                <h2>
+                  최근 추천 기록
+                </h2>
+
+              </div>
+
+              <span class="section-count">
+                최근 3건
+              </span>
+
+            </div>
+
+
+            <div class="history-list">
+
+
+              <article class="history-card">
+
+                <time datetime="2026-08-23">
+                  08/23
+                </time>
+
+                <div class="history-content">
+
+                  <strong>
+                    MES 개발 추천 결과
+                  </strong>
+
+                  <p>
+                    추천 공고 3개 · 적합도 분석 완료
+                  </p>
+
+                </div>
+
+                <span class="history-status">
+                  완료
+                </span>
+
+              </article>
+
+
+              <article class="history-card">
+
+                <time datetime="2026-08-22">
+                  08/22
+                </time>
+
+                <div class="history-content">
+
+                  <strong>
+                    사내 IT 지원 추천
+                  </strong>
+
+                  <p>
+                    추천 공고 3개 · 적합도 분석 완료
+                  </p>
+
+                </div>
+
+                <span class="history-status">
+                  완료
+                </span>
+
+              </article>
+
+
+              <article class="history-card">
+
+                <time datetime="2026-08-20">
+                  08/20
+                </time>
+
+                <div class="history-content">
+
+                  <strong>
+                    백엔드 개발 추천
+                  </strong>
+
+                  <p>
+                    추천 공고 3개 · 적합도 분석 완료
+                  </p>
+
+                </div>
+
+                <span class="history-status">
+                  완료
+                </span>
+
+              </article>
+
+            </div>
+
+          </section>
+
+        </div>
+
+      </section>
+
+    </div>
+
+  </main>
+
+
+  <!-- =========================================
+       FOOTER
+  ========================================== -->
+  <footer
+    id="siteFooter"
+    class="site-footer">
+
+    <div class="container">
+
+      JobFit AI · AI 기반 맞춤 채용공고 추천 서비스
+
+    </div>
+
+  </footer>
+
+
+  <!-- =========================================
+       JAVASCRIPT
+  ========================================== -->
+
+  <script src="js/jobs-data.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/mypage.js"></script>
+
+</body>
+
+</html>

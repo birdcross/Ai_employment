@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>JobFit AI | 채용공고</title>
+
+  <link rel="stylesheet" href="/css/common.css?v=10">
+  <link rel="stylesheet" href="/css/jobs.css?v=10">
+</head>
+
+
+<body>
+
+
+  <!-- =========================================
+       HEADER
+  ========================================== -->
+  <header id="siteHeader" class="site-header">
+
+    <div class="container nav-wrap">
+
+      <!-- Logo -->
+      <a
+        id="brandLogo"
+        class="brand"
+        href="index.html">
+        JobFit AI
+      </a>
+
+
+      <!-- Mobile Menu -->
+      <button
+        id="menuToggle"
+        class="menu-toggle"
+        type="button"
+        aria-label="메뉴 열기">
+        ☰
+      </button>
+
+
+      <!-- Navigation -->
+      <nav
+        id="mainNav"
+        class="main-nav">
+
+        <a href="index.html">
+          HOME
+        </a>
+
+        <a
+          class="active"
+          href="jobs.html">
+          JOBS
+        </a>
+
+        <a href="match.html">
+          AI MATCH
+        </a>
+
+        <a href="mypage.html">
+          MY PAGE
+        </a>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+
+
+  <!-- =========================================
+       PAGE HEADER
+  ========================================== -->
+  <section class="page-header">
+
+    <div class="container">
+
+      <span class="eyebrow">
+        JOBS
+      </span>
+
+      <h1>
+        채용공고 찾기
+      </h1>
+
+      <p>
+        키워드와 조건을 조합해
+        원하는 채용공고를 빠르게 찾아보세요.
+      </p>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =========================================
+       MAIN
+  ========================================== -->
+  <main
+    id="jobsPage"
+    class="jobs-main">
+
+    <div class="container">
+
+
+      <!-- =====================================
+           검색 / 필터
+      ====================================== -->
+      <section
+        id="searchArea"
+        class="search-box">
+
+        <div class="search-row">
+
+
+          <!-- 키워드 -->
+          <div class="search-item search-keyword">
+
+            <label for="keywordInput">
+              키워드
+            </label>
+
+            <input
+              id="keywordInput"
+              type="search"
+              placeholder="예: Java, MES, IT 지원">
+
+          </div>
+
+
+          <!-- 지역 -->
+          <div class="search-item">
+
+            <label for="locationFilter">
+              지역
+            </label>
+
+            <select id="locationFilter">
+              <option value="">
+                전체
+              </option>
+            </select>
+
+          </div>
+
+
+          <!-- 경력 -->
+          <div class="search-item">
+
+            <label for="careerFilter">
+              경력
+            </label>
+
+            <select id="careerFilter">
+              <option value="">
+                전체
+              </option>
+            </select>
+
+          </div>
+
+
+          <!-- 직무 -->
+          <div class="search-item">
+
+            <label for="categoryFilter">
+              직무
+            </label>
+
+            <select id="categoryFilter">
+              <option value="">
+                전체
+              </option>
+            </select>
+
+          </div>
+
+
+          <!-- 초기화 -->
+          <div class="search-reset">
+
+            <button
+              id="resetButton"
+              class="btn btn-secondary"
+              type="button">
+              초기화
+            </button>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- =====================================
+           검색 결과 Count
+      ====================================== -->
+      <div
+        id="resultsMeta"
+        class="job-count">
+
+        총
+
+        <strong id="resultCount">
+          0
+        </strong>
+
+        개의 채용공고가 있습니다.
+
+      </div>
+
+
+
+      <!-- =====================================
+           JOB LIST
+
+           jobs.js에서 여기에
+           채용공고 카드를 생성
+      ====================================== -->
+      <section
+        id="jobList"
+        class="jobs-grid"
+        aria-live="polite">
+      </section>
+
+
+
+      <!-- =====================================
+           검색 결과 없음
+      ====================================== -->
+      <div
+        id="emptyState"
+        class="empty-state hidden">
+
+        <div class="empty-icon">
+          🔍
+        </div>
+
+        <h3>
+          검색 결과가 없습니다.
+        </h3>
+
+        <p>
+          다른 키워드 또는 조건으로 검색해보세요.
+        </p>
+
+      </div>
+
+    </div>
+
+  </main>
+
+
+
+  <!-- =========================================
+       FOOTER
+  ========================================== -->
+  <footer
+    id="siteFooter"
+    class="site-footer">
+
+    <div class="container">
+
+      JobFit AI · AI 기반 맞춤 채용공고 추천 서비스
+
+    </div>
+
+  </footer>
+
+
+
+  <!-- =========================================
+       JAVASCRIPT
+  ========================================== -->
+
+  <!-- Sample Job Data -->
+  <script src="js/jobs-data.js"></script>
+
+  <!-- Common -->
+  <script src="js/common.js"></script>
+
+  <!-- Jobs -->
+  <script src="js/jobs.js"></script>
+
+</body>
+</html>

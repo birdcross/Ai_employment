@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>JobFit AI | AI 맞춤 추천</title>
+
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/match.css">
+</head>
+
+
+<body>
+
+  <!-- =========================================
+       HEADER
+  ========================================== -->
+  <header id="siteHeader" class="site-header">
+
+    <div class="container nav-wrap">
+
+      <a
+        id="brandLogo"
+        class="brand"
+        href="index.html">
+        JobFit AI
+      </a>
+
+      <button
+        id="menuToggle"
+        class="menu-toggle"
+        type="button"
+        aria-label="메뉴 열기">
+        ☰
+      </button>
+
+      <nav
+        id="mainNav"
+        class="main-nav">
+
+        <a href="index.html">
+          HOME
+        </a>
+
+        <a href="jobs.html">
+          JOBS
+        </a>
+
+        <a
+          class="active"
+          href="match.html">
+          AI MATCH
+        </a>
+
+        <a href="mypage.html">
+          MY PAGE
+        </a>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+
+  <!-- =========================================
+       PAGE HEADER
+  ========================================== -->
+  <section class="page-header">
+
+    <div class="container">
+
+      <span class="eyebrow">
+        AI MATCH
+      </span>
+
+      <h1>
+        내 스펙에 맞는 공고 찾기
+      </h1>
+
+      <p>
+        입력한 정보와 채용공고를 AI가 비교하여
+        가장 적합한 TOP 3 공고를 추천합니다.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================================
+       MAIN
+  ========================================== -->
+  <main
+    id="matchPage"
+    class="match-main">
+
+    <div class="container">
+
+
+      <!-- =====================================
+           입력 영역
+      ====================================== -->
+      <section class="match-layout">
+
+
+        <!-- ===============================
+             사용자 정보 입력 Form
+        ================================ -->
+        <form
+          id="matchForm"
+          class="match-form">
+
+          <div class="match-form-header">
+
+            <span class="form-badge">
+              PROFILE
+            </span>
+
+            <h2>
+              내 정보 입력
+            </h2>
+
+            <p class="form-description">
+              입력한 정보를 기준으로 채용공고와의
+              적합도를 AI가 분석합니다.
+            </p>
+
+          </div>
+
+
+          <!-- 희망직무 + 경력 -->
+          <div class="form-row two">
+
+            <div class="form-group">
+
+              <label for="desiredRole">
+                희망 직무
+                <em>*</em>
+              </label>
+
+              <input
+                id="desiredRole"
+                type="text"
+                placeholder="예: MES 개발 / IT 지원"
+                required>
+
+            </div>
+
+
+            <div class="form-group">
+
+              <label for="career">
+                경력
+                <em>*</em>
+              </label>
+
+              <input
+                id="career"
+                type="text"
+                placeholder="예: 신입 / 3년"
+                required>
+
+            </div>
+
+          </div>
+
+
+          <!-- 희망지역 + 자격증 -->
+          <div class="form-row two">
+
+            <div class="form-group">
+
+              <label for="desiredLocation">
+                희망 지역
+                <em>*</em>
+              </label>
+
+              <input
+                id="desiredLocation"
+                type="text"
+                placeholder="예: 부산 / 경남"
+                required>
+
+            </div>
+
+
+            <div class="form-group">
+
+              <label for="certificates">
+                자격증
+              </label>
+
+              <input
+                id="certificates"
+                type="text"
+                placeholder="예: 정보처리기사">
+
+            </div>
+
+          </div>
+
+
+          <!-- 보유기술 -->
+          <div class="form-group">
+
+            <label for="skills">
+              보유 기술
+              <em>*</em>
+            </label>
+
+            <input
+              id="skills"
+              type="text"
+              placeholder="예: Java, Oracle, Python, MES"
+              required>
+
+            <small>
+              여러 기술은 쉼표(,)로 구분하여 입력하세요.
+            </small>
+
+          </div>
+
+
+          <!-- 학력 / 경험 -->
+          <div class="form-group">
+
+            <label for="education">
+              학력 / 기타 경험
+            </label>
+
+            <input
+              id="education"
+              type="text"
+              placeholder="예: 학사 / 제조업 IT 경험">
+
+          </div>
+
+
+          <!-- 추가메모 -->
+          <div class="form-group">
+
+            <label for="note">
+              추가 메모
+            </label>
+
+            <textarea
+              id="note"
+              rows="5"
+              placeholder="희망 산업, 강점, 관심 업무 등을 자유롭게 작성하세요."></textarea>
+
+          </div>
+
+
+          <!-- 에러메시지 -->
+          <div
+            id="formMessage"
+            class="form-message hidden">
+          </div>
+
+
+          <!-- 추천 버튼 -->
+          <button
+            id="recommendButton"
+            class="btn btn-primary btn-wide"
+            type="submit">
+
+            ✨ AI 공고 추천 받기
+
+          </button>
+
+        </form>
+
+
+
+        <!-- ===============================
+             입력 Guide
+        ================================ -->
+        <aside
+          id="inputGuide"
+          class="guide-card">
+
+          <div class="guide-icon">
+            AI
+          </div>
+
+          <span class="eyebrow">
+            INPUT GUIDE
+          </span>
+
+          <h2>
+            이렇게 입력하면 좋아요
+          </h2>
+
+          <p class="guide-description">
+            구체적인 정보를 입력할수록
+            AI가 더 정확하게 공고를 비교할 수 있습니다.
+          </p>
+
+          <ul class="guide-list">
+
+            <li>
+              <span>01</span>
+
+              <div>
+                <strong>보유 기술</strong>
+                <p>Java, Python, Oracle 등 쉼표로 구분</p>
+              </div>
+            </li>
+
+            <li>
+              <span>02</span>
+
+              <div>
+                <strong>희망 지역</strong>
+                <p>근무 가능한 지역을 1~2개 입력</p>
+              </div>
+            </li>
+
+            <li>
+              <span>03</span>
+
+              <div>
+                <strong>산업 경험</strong>
+                <p>MES, ERP, 네트워크 등 관련 경험 입력</p>
+              </div>
+            </li>
+
+            <li>
+              <span>04</span>
+
+              <div>
+                <strong>추가 경험</strong>
+                <p>프로젝트나 강점도 자유롭게 작성</p>
+              </div>
+            </li>
+
+          </ul>
+
+
+          <div class="expected-box">
+
+            <span>
+              AI 분석 결과
+            </span>
+
+            <strong>
+              추천 공고 TOP 3
+            </strong>
+
+            <p>
+              적합도 점수 · 추천 이유 · 강점 · 보완 역량
+            </p>
+
+          </div>
+
+        </aside>
+
+      </section>
+
+
+
+      <!-- =====================================
+           AI 분석 Loading
+
+           match.js에서 hidden 제어
+      ====================================== -->
+      <section
+        id="loadingPanel"
+        class="loading-panel hidden"
+        aria-live="polite">
+
+        <div class="loading-content">
+
+          <div class="ai-spinner">
+            <span>
+              AI
+            </span>
+          </div>
+
+          <h2>
+            AI가 채용공고를 분석하고 있습니다
+          </h2>
+
+          <p>
+            입력하신 정보와 채용공고의 적합도를
+            비교하고 있습니다.
+          </p>
+
+
+          <div class="progress-steps">
+
+            <div class="progress-step">
+              <span>1</span>
+              <p>입력값 확인</p>
+            </div>
+
+            <div class="progress-line"></div>
+
+            <div class="progress-step">
+              <span>2</span>
+              <p>후보 공고 추출</p>
+            </div>
+
+            <div class="progress-line"></div>
+
+            <div class="progress-step">
+              <span>3</span>
+              <p>적합도 분석</p>
+            </div>
+
+            <div class="progress-line"></div>
+
+            <div class="progress-step">
+              <span>4</span>
+              <p>추천 결과 생성</p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- =====================================
+           AI 결과
+
+           match.js에서 hidden 제거 후 표시
+      ====================================== -->
+      <section
+        id="resultPanel"
+        class="result-panel hidden"
+        aria-live="polite">
+
+
+        <!-- 결과 Header -->
+        <div class="result-header">
+
+          <div>
+
+            <span class="eyebrow">
+              AI RESULT
+            </span>
+
+            <h2>
+              추천 공고 TOP 3
+            </h2>
+
+            <p>
+              입력하신 정보와 가장 적합한
+              채용공고를 분석했습니다.
+            </p>
+
+          </div>
+
+
+          <button
+            id="retryButton"
+            class="btn btn-secondary"
+            type="button">
+
+            다시 입력하기
+
+          </button>
+
+        </div>
+
+
+
+        <!-- 결과 Layout -->
+        <div class="result-layout">
+
+
+          <!-- 추천 공고 List -->
+          <div>
+
+            <h3 class="result-subtitle">
+              추천 채용공고
+            </h3>
+
+            <div
+              id="recommendationList"
+              class="recommendation-list">
+
+              <!--
+                match.js에서 추천 카드 생성
+              -->
+
+            </div>
+
+          </div>
+
+
+
+          <!-- 상세 AI 분석 -->
+          <aside>
+
+            <h3 class="result-subtitle">
+              AI 상세 분석
+            </h3>
+
+            <article
+              id="analysisDetail"
+              class="analysis-card">
+
+              <!--
+                match.js에서 분석내용 생성
+              -->
+
+            </article>
+
+          </aside>
+
+        </div>
+
+      </section>
+
+    </div>
+
+  </main>
+
+
+  <!-- =========================================
+       FOOTER
+  ========================================== -->
+  <footer
+    id="siteFooter"
+    class="site-footer">
+
+    <div class="container">
+
+      JobFit AI · AI 기반 맞춤 채용공고 추천 서비스
+
+    </div>
+
+  </footer>
+
+
+  <!-- =========================================
+       JAVASCRIPT
+  ========================================== -->
+
+  <script src="js/jobs-data.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/match.js"></script>
+
+</body>
+
+</html>
